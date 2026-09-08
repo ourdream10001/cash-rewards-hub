@@ -61,6 +61,13 @@
             color: #c0392b;
             font-weight: bold;
             font-size: 16px;
+            text-align: center;
+        }
+        .timer-box span {
+            display: block;
+            font-size: 20px;
+            margin-top: 5px;
+            color: #e74c3c;
         }
         .steps {
             text-align: left;
@@ -220,7 +227,7 @@
             to { opacity: 1; transform: scale(1); }
         }
 
-        /* রিভিউ সেকশনের কালারের সাথে ম্যাচিং ফুটার স্টাইল */
+        /* ফুটার সেকশন */
         footer {
             background-color: #e8f8f5;
             color: #2c3e50;
@@ -259,9 +266,10 @@
 
         <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=600&q=80" alt="Cash Reward" class="banner-img">
 
-        <!-- কাউন্টডাউন টাইমার বক্স -->
+        <!-- কাউন্টডাউন টাইমার বক্স (টাইমার নিচের লাইনে করা হয়েছে) -->
         <div class="timer-box">
-            ⏰ Special Giveaway Closes In: <span id="countdown">03h : 22m : 45s</span>
+            ⏰ Special Giveaway Closes In: 
+            <span id="countdown">03h : 21m : 14s</span>
         </div>
 
         <div class="steps">
@@ -293,7 +301,6 @@
             </div>
         </div>
 
-        <!-- ম্যাচিং কালার ফুটার সেকশন -->
         <footer>
             <p>This promotional page is independently operated and not directly affiliated with Cash App. Offers are subject to completion of terms.</p>
             <p>
@@ -304,7 +311,7 @@
         </footer>
     </div>
 
-    <!-- নীল রঙের কাস্টম পপআপ মডাল বক্স -->
+    <!-- কাস্টম পপআপ মডাল বক্স -->
     <div class="custom-modal" id="customModal">
         <div class="modal-content">
             <p id="modalMessage">Thank you! Your review has been submitted successfully.</p>
@@ -312,9 +319,9 @@
         </div>
     </div>
 
-    <!-- স্ক্রিপ্ট সেকশন (১০০টি রিভিউসহ) -->
+    <!-- স্ক্রিপ্ট সেকশন -->
     <script>
-        let time = 3 * 3600 + 22 * 60 + 45; 
+        let time = 3 * 3600 + 21 * 60 + 14; 
         const countdownElement = document.getElementById("countdown");
 
         setInterval(() => {
