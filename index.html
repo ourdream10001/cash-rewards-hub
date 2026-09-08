@@ -28,10 +28,11 @@
             max-width: 600px;
             margin: 30px auto;
             background: #fff;
-            padding: 30px;
+            padding: 30px 30px 0 30px; /* ফুটার ফুল করার জন্য নিচের প্যাডিং শূন্য রাখা হয়েছে */
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             text-align: center;
+            overflow: hidden; /* ফুটার কর্নার নিখুঁত রাউন্ড রাখার জন্য */
         }
         h1 {
             color: #2c3e50;
@@ -219,17 +220,28 @@
             to { opacity: 1; transform: scale(1); }
         }
 
+        /* ডার্ক বা কালচে ফুটার স্টাইল */
         footer {
+            background-color: #1a252f;
+            color: #ecf0f1;
             font-size: 12px;
-            color: #888;
-            border-top: 1px solid #eee;
-            padding-top: 15px;
+            padding: 25px 20px;
+            margin: 30px -30px 0 -30px;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
             text-align: center;
         }
+        footer p {
+            color: #bdc3c7 !important;
+            margin-bottom: 10px;
+        }
         footer a {
-            color: #888;
+            color: #3498db;
             text-decoration: underline;
             margin: 0 5px;
+        }
+        footer a:hover {
+            color: #5dade2;
         }
     </style>
 </head>
@@ -262,7 +274,7 @@
         <!-- বাটন কন্টেইনার -->
         <div class="cta-container">
             <p style="color: #555; font-size: 15px; margin-bottom: 12px; font-weight: 600;">👇 Click below to start claiming your reward 👇</p>
-            <a href="https://www.car.com/" class="cta-btn" target="_blank">Claim Your $750 Now</a>
+            <a href="YOUR_AFFMINE_TRACKING_LINK_HERE" class="cta-btn" target="_blank">Claim Your $750 Now</a>
         </div>
 
         <!-- অটো-স্লাইডিং রিভিউ সেকশন -->
@@ -279,6 +291,7 @@
             </div>
         </div>
 
+        <!-- ডার্ক বা কালচে ফুটার সেকশন -->
         <footer>
             <p>This promotional page is independently operated and not directly affiliated with Cash App. Offers are subject to completion of terms.</p>
             <p>
