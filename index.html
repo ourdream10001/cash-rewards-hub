@@ -185,7 +185,7 @@
             z-index: 1000;
         }
         .modal-content {
-            background: linear-gradient(135deg, #2980b9, #3498db); /* সুন্দর আকর্ষণীয় নীল রঙ */
+            background: linear-gradient(135deg, #2980b9, #3498db);
             color: white;
             padding: 25px 30px;
             border-radius: 12px;
@@ -262,16 +262,13 @@
         <!-- বাটন কন্টেইনার -->
         <div class="cta-container">
             <p style="color: #555; font-size: 15px; margin-bottom: 12px; font-weight: 600;">👇 Click below to start claiming your reward 👇</p>
-            <!-- এখানে আপনার অ্যাফমাইনের (Affmine) ট্র্যাকিং লিংক বসিয়ে দেবেন -->
             <a href="YOUR_AFFMINE_TRACKING_LINK_HERE" class="cta-btn" target="_blank">Claim Your $750 Now</a>
         </div>
 
         <!-- অটো-স্লাইডিং রিভিউ সেকশন -->
         <div class="testimonials">
             <h3>Recent Winner Reviews</h3>
-            <div class="slider-container" id="reviewSlider">
-                <!-- রিভিউগুলো জাভাস্ক্রিপ্ট থেকে ডায়নামিক লোড হবে -->
-            </div>
+            <div class="slider-container" id="reviewSlider"></div>
 
             <!-- ভিজিটর রিভিউ সাবমিট করার ফর্ম -->
             <div class="review-form">
@@ -300,9 +297,8 @@
         </div>
     </div>
 
-    <!-- কাউন্টডাউন এবং রিভিউ স্লাইডার স্ক্রিপ্ট -->
+    <!-- স্ক্রিপ্ট সেকশন -->
     <script>
-        // রিয়েল-টাইম চলমান কাউন্টডাউন টাইমার
         let time = 3 * 3600 + 22 * 60 + 45; 
         const countdownElement = document.getElementById("countdown");
 
@@ -321,7 +317,6 @@
             }
         }, 1000);
 
-        // প্রফেশনাল রিভিউগুলোর ডাটাবেজ
         const reviews = [
             { name: "Ethan Parker (USA)", text: "Unbelievable! I got my confirmation email just minutes after finishing." },
             { name: "Chloe Smith (UK)", text: "Super clean site and very easy to navigate. Got my reward fast!" },
@@ -332,67 +327,7 @@
             { name: "Mason Roberts (France)", text: "Quick and easy steps. Received my prize notification instantly!" },
             { name: "Grace Harris (USA)", text: "Such an amazing experience! Can't wait to share this." },
             { name: "Lucas Davis (Canada)", text: "Legit offer! Everything worked smoothly without any hassle." },
-            { name: "Harper King (UK)", text: "Fast verification and great rewards. Highly satisfied!" },
-            { name: "Jackson Evans (Australia)", text: "Clean layout, clear instructions, and instant confirmation. 5 stars!" },
-            { name: "Ella Taylor (USA)", text: "I'm still shocked! Got my reward within minutes of completion." },
-            { name: "Aiden Nelson (Germany)", text: "Very trustworthy and fast. Highly recommended!" },
-            { name: "Mia Clark (Canada)", text: "Awesome program! Very straightforward and honest." },
-            { name: "Carter Lewis (USA)", text: "Got my $750 reward! Super stoked right now." },
-            { name: "Aria Green (UK)", text: "Quick verification and fast response. Excellent platform!" },
-            { name: "Jayden Moore (France)", text: "Very happy with the results. Super easy to follow steps." },
-            { name: "Sofia Phillips (Australia)", text: "Incredible experience! Got my reward processed quickly." },
-            { name: "Grayson Scott (USA)", text: "Legit and fast! Thank you for the amazing opportunity." },
-            { name: "Camila White (Canada)", text: "Super simple process. Received my confirmation right away." },
-            { name: "Sebastian Hall (Germany)", text: "Trusted platform. Everything worked like a charm." },
-            { name: "Avery Adams (USA)", text: "Fast, reliable, and totally free to enter. Loved it!" },
-            { name: "Elijah Baker (UK)", text: "Got my prize update in no time. Amazing service!" },
-            { name: "Scarlett Ramirez (Australia)", text: "Super easy verification steps. Highly recommended!" },
-            { name: "Liam Turner (Canada)", text: "Unbelievable speed! Got my reward confirmation instantly." },
-            { name: "Victoria Walker (USA)", text: "Such a great platform. Very smooth and transparent." },
-            { name: "Noah Diaz (France)", text: "Quick and hassle-free. Got my reward today!" },
-            { name: "Penelope Cooper (UK)", text: "Fantastic giveaway! Super easy to complete." },
-            { name: "Oliver Jimenez (Germany)", text: "Very clean and professional. Highly satisfied." },
-            { name: "Layla Morris (USA)", text: "Got my $750 reward processed smoothly. Thank you!" },
-            { name: "Evelyn Flores (Canada)", text: "Legit offer and fast verification. Awesome experience!" },
-            { name: "Henry Gonzalez (Australia)", text: "Super happy with the quick payout notification." },
-            { name: "Abigail Perez (USA)", text: "Simple steps and instant reward confirmation. Love it!" },
-            { name: "Alexander Roberts (UK)", text: "Trustworthy platform. Everything went as promised." },
-            { name: "Emily Sanchez (Germany)", text: "Very fast and reliable. Highly recommended!" },
-            { name: "Daniel Russell (Canada)", text: "Amazing platform! Got my reward within minutes." },
-            { name: "Elizabeth Griffin (USA)", text: "Super smooth process and clear instructions." },
-            { name: "Matthew Diaz (France)", text: "Legit and fast! Got my confirmation email today." },
-            { name: "Sofia Hayes (Australia)", text: "Fantastic giveaway experience. Very happy!" },
-            { name: "Joseph Ward (UK)", text: "Quick, easy, and trusted. 5/5 stars!" },
-            { name: "Aurelia Murphy (USA)", text: "Got my reward processed instantly. Highly recommended!" },
-            { name: "Gabriel Rivera (Canada)", text: "Super easy steps. Very satisfied with the outcome." },
-            { name: "Madison Cooper (Germany)", text: "Incredible platform! Fast verification process." },
-            { name: "Samuel Reed (USA)", text: "Legit reward system. Got my confirmation right away." },
-            { name: "Chloe Bailey (UK)", text: "Super fast and reliable service. Thank you!" },
-            { name: "David Bell (Australia)", text: "Great giveaway! Everything worked perfectly." },
-            { name: "Victoria Howard (Canada)", text: "Very smooth and transparent process. Loved it!" },
-            { name: "Jackson Ward (USA)", text: "Got my $750 confirmation! Super excited." },
-            { name: "Grace Cox (France)", text: "Quick verification and instant reward update." },
-            { name: "Carter Richardson (UK)", text: "Trustworthy and very easy to use. Recommended!" },
-            { name: "Penelope Watson (Germany)", text: "Fast and legit! Got my prize notification." },
-            { name: "Wyatt Brooks (USA)", text: "Super simple and clear. Amazing experience!" },
-            { name: "Hannah Sanders (Canada)", text: "Got my reward within minutes. So happy!" },
-            { name: "Owen Price (Australia)", text: "Trusted platform with fast verification." },
-            { name: "Stella Bennett (USA)", text: "Legit offer! Everything was super smooth." },
-            { name: "Luke Wood (UK)", text: "Quick and easy steps. Highly satisfied!" },
-            { name: "Addison Barnes (Germany)", text: "Fantastic experience! Got my reward processed." },
-            { name: "John Ross (Canada)", text: "Super reliable and fast platform. Love it!" },
-            { name: "Natalie Henderson (USA)", text: "Got my $750 confirmation today! Amazing." },
-            { name: "Julian Coleman (France)", text: "Very straightforward and clean process." },
-            { name: "Leah Jenkins (Australia)", text: "Quick verification and instant update. Awesome!" },
-            { name: "Ryan Perry (UK)", text: "Legit rewards and fast response. 5 stars!" },
-            { name: "Audrey Powell (USA)", text: "Super smooth process. Highly recommended!" },
-            { name: "Nathan Long (Canada)", text: "Got my reward in no time. Thank you!" },
-            { name: "Savannah Patterson (Germany)", text: "Trusted and transparent giveaway program." },
-            { name: "Eli Hughes (USA)", text: "Fast, easy, and totally legit. Very happy!" },
-            { name: "Bella Flores (UK)", text: "Quick verification steps and instant notice." },
-            { name: "Isaac Washington (Australia)", text: "Amazing platform! Got my reward instantly." },
-            { name: "Skylar Butler (Canada)", text: "Super simple and reliable. Loved it!" },
-            { name: "Aaron Simmons (USA)", text: "Got my $750 confirmation! Best experience ever." }
+            { name: "Harper King (UK)", text: "Fast verification and great rewards. Highly satisfied!" }
         ];
 
         let currentIndex = 0;
@@ -417,7 +352,6 @@
         displayReviews();
         setInterval(displayReviews, 3000);
 
-        // কাস্টম মডাল পপআপ কন্ট্রোল ফাংশন
         function showModal(message) {
             document.getElementById("modalMessage").innerText = message;
             document.getElementById("customModal").style.display = "flex";
@@ -427,7 +361,6 @@
             document.getElementById("customModal").style.display = "none";
         }
 
-        // ভিজিটর রিভিউ সাবমিট করার ফাংশন
         function submitReview() {
             const nameInput = document.getElementById("visitorName");
             const textInput = document.getElementById("visitorText");
