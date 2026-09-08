@@ -90,7 +90,6 @@
             border: 1px solid #eee;
             text-align: center;
         }
-        /* বাটন স্টাইল: সাধারণ অবস্থায় হালকা ছায়া এবং হোভার করলে ছায়া বাড়বে */
         .cta-btn {
             display: inline-block;
             background-color: #27ae60;
@@ -101,20 +100,15 @@
             text-decoration: none;
             border-radius: 50px;
             transition: all 0.3s ease;
-            
-            /* মাউস না থাকলেও সবসময় হালকা একটি ছায়া থাকবে */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); 
-
             margin-top: 5px;
         }
         .cta-btn:hover {
             background-color: #219653;
             transform: translateY(-2px);
-            
-            /* মাউস নিলে বাটনটি একটু উপরে উঠবে এবং ছায়া আরও গাড় ও বড় হবে */
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); 
         }
-        /* ইউজার রিভিউ বা টেস্টিমোনিয়াল সেকশন স্টাইল */
+        /* ইউজার রিভিউ বা টেস্টিমোনিয়াল স্লাইডার সেকশন */
         .testimonials {
             text-align: left;
             background: #e8f8f5;
@@ -128,6 +122,11 @@
             margin-bottom: 12px;
             text-align: center;
         }
+        .slider-container {
+            height: 140px; /* একসাথে দুটি কার্ড দেখানোর উচ্চতা */
+            overflow: hidden;
+            position: relative;
+        }
         .review-card {
             background: #fff;
             padding: 12px;
@@ -135,6 +134,7 @@
             margin-bottom: 10px;
             font-size: 14px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: all 0.5s ease-in-out;
         }
         .review-card strong {
             color: #27ae60;
@@ -185,14 +185,11 @@
             <a href="YOUR_AFFMINE_TRACKING_LINK_HERE" class="cta-btn" target="_blank">Claim Your $750 Now</a>
         </div>
 
-        <!-- ইউজার রিভিউ বা টেস্টিমোনিয়াল সেকশন -->
+        <!-- অটো-স্লাইডিং রিভিউ সেকশন -->
         <div class="testimonials">
             <h3>Recent Winner Reviews</h3>
-            <div class="review-card">
-                <strong>Sarah M. (USA)</strong> - "I couldn't believe it at first, but I got my $750 reward within 10 minutes of completing the steps. Thank you!"
-            </div>
-            <div class="review-card">
-                <strong>David L. (USA)</strong> - "Super easy process! Highly recommended for anyone looking for quick rewards."
+            <div class="slider-container" id="reviewSlider">
+                <!-- রিভিউগুলো জাভাস্ক্রিপ্ট থেকে ডায়নামিক লোড হবে -->
             </div>
         </div>
 
@@ -206,8 +203,9 @@
         </footer>
     </div>
 
-    <!-- রিয়েল-টাইম চলমান কাউন্টডাউন টাইমার স্ক্রিপ্ট -->
+    <!-- কাউন্টডাউন এবং রিভিউ স্লাইডার স্ক্রিপ্ট -->
     <script>
+        // রিয়েল-টাইম চলমান কাউন্টডাউন টাইমার
         let time = 4 * 3600 + 22 * 60 + 45; 
         const countdownElement = document.getElementById("countdown");
 
@@ -225,6 +223,72 @@
                 time--;
             }
         }, 1000);
+
+        // ৩৫টি প্রফেশনাল রিভিউয়ের ডাটাবেজ
+        const reviews = [
+            { name: "Sarah M. (USA)", text: "I couldn't believe it at first, but I got my $750 reward within 10 minutes. Thank you!" },
+            { name: "David L. (USA)", text: "Super easy process! Highly recommended for anyone looking for quick rewards." },
+            { name: "Jessica K. (UK)", text: "Got my cash deposited directly! Best giveaway platform ever." },
+            { name: "Michael B. (Canada)", text: "At first, I thought it was fake, but it actually worked smoothly. Awesome!" },
+            { name: "Emily R. (Australia)", text: "Incredible experience! Completed the verification and received the confirmation instantly." },
+            { name: "James W. (USA)", text: "Fast and legit! Got my reward processed in no time." },
+            { name: "Amanda P. (UK)", text: "Super happy right now! Such a clean and transparent process." },
+            { name: "Robert T. (Germany)", text: "Easy steps to follow. Very satisfied with the quick payout." },
+            { name: "Lisa H. (France)", text: "Amazing opportunity! Thank you for the transparent reward program." },
+            { name: "Kevin M. (USA)", text: "Got my $750! Super stoked and sharing this with my friends." },
+            { name: "Rachel D. (Canada)", text: "Legit offer! Took less than 5 minutes to complete everything." },
+            { name: "Brian S. (USA)", text: "Super smooth process. The instructions were very clear." },
+            { name: "Nicole C. (UK)", text: "I'm so excited! Received my prize notification just now." },
+            { name: "Steven K. (Australia)", text: "Fantastic support and quick verification steps. Loved it!" },
+            { name: "Ashley B. (USA)", text: "Can't thank you guys enough! This made my day." },
+            { name: "Brandon J. (Germany)", text: "Very trustworthy platform. Everything went smoothly." },
+            { name: "Megan L. (Canada)", text: "Quick, easy, and legit rewards. Highly recommended!" },
+            { name: "Justin T. (USA)", text: "Awesome experience. Got my reward verified instantly." },
+            { name: "Samantha V. (UK)", text: "So simple to do! Got my confirmation email right away." },
+            { name: "Tyler H. (USA)", text: "Legit cash app reward system. Will definitely participate again." },
+            { name: "Hannah P. (France)", text: "Very clear steps and fast processing. Super happy!" },
+            { name: "Christian R. (USA)", text: "Thought it wouldn't work, but it completely surprised me. Legit!" },
+            { name: "Amber S. (Australia)", text: "Super fast and reliable. Got my reward without any issues." },
+            { name: "Daniel K. (Canada)", text: "Great platform! Very straightforward verification process." },
+            { name: "Victoria M. (USA)", text: "Amazing! Received my reward notification within minutes." },
+            { name: "Matthew G. (UK)", text: "Clean site layout and super responsive. Very pleased!" },
+            { name: "Lauren F. (USA)", text: "Such an easy way to claim rewards. Thank you so much!" },
+            { name: "Andrew C. (Germany)", text: "Worked like a charm! Fast and transparent." },
+            { name: "Brittany W. (Canada)", text: "So happy I found this page. Legit and fast!" },
+            { name: "Joshua E. (USA)", text: "Super easy verification. Got my reward instantly." },
+            { name: "Courtney B. (UK)", text: "Fantastic experience! Everything worked perfectly." },
+            { name: "Nicholas D. (Australia)", text: "Quick process and trusted platform. Highly recommended." },
+            { name: "Kayla S. (USA)", text: "Got my $750 confirmation! Best giveaway ever." },
+            { name: "Zackary T. (Canada)", text: "Super smooth and reliable. 5/5 stars!" },
+            { name: "Alexis N. (USA)", text: "Incredible! Fast verification and instant reward update." }
+        ];
+
+        let currentIndex = 0;
+        const slider = document.getElementById("reviewSlider");
+
+        function displayReviews() {
+            // একসাথে দুটি করে রিভিউ সিলেক্ট করা
+            let rev1 = reviews[currentIndex];
+            let rev2 = reviews[(currentIndex + 1) % reviews.length];
+
+            slider.innerHTML = `
+                <div class="review-card">
+                    <strong>${rev1.name}</strong> - "${rev1.text}"
+                </div>
+                <div class="review-card">
+                    <strong>${rev2.name}</strong> - "${rev2.text}"
+                </div>
+            `;
+
+            // প্রতিবার ইনডেক্স ১ করে বাড়াবে, যাতে ১টি করে রিভিউ পরিবর্তন হয়
+            currentIndex = (currentIndex + 1) % reviews.length;
+        }
+
+        // প্রথমে একবার রান করবে
+        displayReviews();
+
+        // প্রতি ৩ সেকেন্ড পর পর (3000 মিলি সেকেন্ড) রিভিউ পরিবর্তন হবে
+        setInterval(displayReviews, 3000);
     </script>
 
 </body>
