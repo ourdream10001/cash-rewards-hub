@@ -90,7 +90,7 @@
             border: 1px solid #eee;
             text-align: center;
         }
-        /* বাটন স্টাইল ও স্পষ্ট কালো ছায়া (Black Shadow) */
+        /* বাটন স্টাইল: সাধারণ অবস্থায় হালকা ছায়া এবং হোভার করলে ছায়া বাড়বে */
         .cta-btn {
             display: inline-block;
             background-color: #27ae60;
@@ -101,13 +101,18 @@
             text-decoration: none;
             border-radius: 50px;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* চমৎকার কালো ছায়া */
+            
+            /* মাউস না থাকলেও সবসময় হালকা একটি ছায়া থাকবে */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); 
+
             margin-top: 5px;
         }
         .cta-btn:hover {
             background-color: #219653;
             transform: translateY(-2px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35); /* হোভার করলে ছায়া আরেকটু গাড় হবে */
+            
+            /* মাউস নিলে বাটনটি একটু উপরে উঠবে এবং ছায়া আরও গাড় ও বড় হবে */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); 
         }
         /* ইউজার রিভিউ বা টেস্টিমোনিয়াল সেকশন স্টাইল */
         .testimonials {
@@ -173,7 +178,7 @@
             </ol>
         </div>
 
-        <!-- কালো ছায়া যুক্ত বাটন কন্টেইনার -->
+        <!-- বাটন কন্টেইনার -->
         <div class="cta-container">
             <p style="color: #555; font-size: 15px; margin-bottom: 12px; font-weight: 600;">👇 Click below to start claiming your reward 👇</p>
             <!-- এখানে আপনার অ্যাফমাইনের (Affmine) ট্র্যাকিং লিংক বসিয়ে দেবেন -->
