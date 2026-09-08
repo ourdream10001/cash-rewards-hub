@@ -80,7 +80,7 @@
         .steps li {
             margin-bottom: 8px;
         }
-        /* বাটনটির পেছনের সাদা কার্ড বা শেপের স্টাইল */
+        /* বাটনটির পেছনের সাদা কার্ড শেপ */
         .cta-container {
             background-color: #ffffff;
             padding: 25px;
@@ -90,6 +90,7 @@
             border: 1px solid #eee;
             text-align: center;
         }
+        /* বাটন স্টাইল ও স্পষ্ট কালো ছায়া (Black Shadow) */
         .cta-btn {
             display: inline-block;
             background-color: #27ae60;
@@ -99,12 +100,14 @@
             font-weight: bold;
             text-decoration: none;
             border-radius: 50px;
-            transition: background 0.3s ease;
-            box-shadow: 0 4px 10px rgba(39, 174, 96, 0.4);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* চমৎকার কালো ছায়া */
             margin-top: 5px;
         }
         .cta-btn:hover {
             background-color: #219653;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35); /* হোভার করলে ছায়া আরেকটু গাড় হবে */
         }
         /* ইউজার রিভিউ বা টেস্টিমোনিয়াল সেকশন স্টাইল */
         .testimonials {
@@ -170,7 +173,7 @@
             </ol>
         </div>
 
-        <!-- বাটনটির পেছনের সুন্দর সাদা কার্ড শেপ -->
+        <!-- কালো ছায়া যুক্ত বাটন কন্টেইনার -->
         <div class="cta-container">
             <p style="color: #555; font-size: 15px; margin-bottom: 12px; font-weight: 600;">👇 Click below to start claiming your reward 👇</p>
             <!-- এখানে আপনার অ্যাফমাইনের (Affmine) ট্র্যাকিং লিংক বসিয়ে দেবেন -->
