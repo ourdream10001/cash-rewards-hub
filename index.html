@@ -61,22 +61,6 @@
             font-weight: bold;
             font-size: 16px;
         }
-        .cta-btn {
-            display: inline-block;
-            background-color: #27ae60;
-            color: white;
-            padding: 15px 30px;
-            font-size: 18px;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: background 0.3s ease;
-            box-shadow: 0 4px 10px rgba(39, 174, 96, 0.4);
-            margin-bottom: 25px;
-        }
-        .cta-btn:hover {
-            background-color: #219653;
-        }
         .steps {
             text-align: left;
             background: #f9f9f9;
@@ -96,7 +80,33 @@
         .steps li {
             margin-bottom: 8px;
         }
-        /* টেস্টিমোনিয়াল বা রিভিউ সেকশন স্টাইল */
+        /* বাটনটির পেছনের সাদা কার্ড বা শেপের স্টাইল */
+        .cta-container {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+            border: 1px solid #eee;
+            text-align: center;
+        }
+        .cta-btn {
+            display: inline-block;
+            background-color: #27ae60;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: background 0.3s ease;
+            box-shadow: 0 4px 10px rgba(39, 174, 96, 0.4);
+            margin-top: 5px;
+        }
+        .cta-btn:hover {
+            background-color: #219653;
+        }
+        /* ইউজার রিভিউ বা টেস্টিমোনিয়াল সেকশন স্টাইল */
         .testimonials {
             text-align: left;
             background: #e8f8f5;
@@ -160,8 +170,12 @@
             </ol>
         </div>
 
-        <!-- এখানে আপনার অ্যাফমাইনের (Affmine) ট্র্যাকিং বা অফার লিংক বসিয়ে দেবেন -->
-        <a href="YOUR_AFFMINE_TRACKING_LINK_HERE" class="cta-btn" target="_blank">Claim Your $750 Now</a>
+        <!-- বাটনটির পেছনের সুন্দর সাদা কার্ড শেপ -->
+        <div class="cta-container">
+            <p style="color: #555; font-size: 15px; margin-bottom: 12px; font-weight: 600;">👇 Click below to start claiming your reward 👇</p>
+            <!-- এখানে আপনার অ্যাফমাইনের (Affmine) ট্র্যাকিং লিংক বসিয়ে দেবেন -->
+            <a href="YOUR_AFFMINE_TRACKING_LINK_HERE" class="cta-btn" target="_blank">Claim Your $750 Now</a>
+        </div>
 
         <!-- ইউজার রিভিউ বা টেস্টিমোনিয়াল সেকশন -->
         <div class="testimonials">
@@ -183,26 +197,27 @@
             </p>
         </footer>
     </div>
-<script>
-    // কাউন্টডাউন টাইমার সচল করার স্ক্রিপ্ট
-    let time = 4 * 3600 + 22 * 60 + 45; // ৪ ঘণ্টা ২২ মিনিট ৪৫ সেকেন্ড থেকে শুরু হবে
-    const countdownElement = document.getElementById("countdown");
 
-    setInterval(() => {
-        let hours = Math.floor(time / 3600);
-        let minutes = Math.floor((time % 3600) / 60);
-        let seconds = time % 60;
+    <!-- রিয়েল-টাইম চলমান কাউন্টডাউন টাইমার স্ক্রিপ্ট -->
+    <script>
+        let time = 4 * 3600 + 22 * 60 + 45; 
+        const countdownElement = document.getElementById("countdown");
 
-        countdownElement.innerHTML = 
-            String(hours).padStart(2, '0') + "h : " + 
-            String(minutes).padStart(2, '0') + "m : " + 
-            String(seconds).padStart(2, '0') + "s";
+        setInterval(() => {
+            let hours = Math.floor(time / 3600);
+            let minutes = Math.floor((time % 3600) / 60);
+            let seconds = time % 60;
 
-        if (time > 0) {
-            time--;
-        }
-    }, 1000);
-</script>
-    
+            countdownElement.innerHTML = 
+                String(hours).padStart(2, '0') + "h : " + 
+                String(minutes).padStart(2, '0') + "m : " + 
+                String(seconds).padStart(2, '0') + "s";
+
+            if (time > 0) {
+                time--;
+            }
+        }, 1000);
+    </script>
+
 </body>
 </html>
